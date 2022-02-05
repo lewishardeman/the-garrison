@@ -17,7 +17,7 @@ function App() {
 
 
         <span className="temp-home-links">
-          <h3>
+          <h5>
 
 
             <a
@@ -47,7 +47,7 @@ function App() {
               LEARN MORE
             </a>
 
-          </h3>
+          </h5>
 
         </span>
       </header>
