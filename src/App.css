@@ -19,7 +19,8 @@
 }
 
 .App-link {
-  color: rgb(236, 202, 47);
+  color: rgb(184, 152, 13);
+  padding-right: 40px;
 }
 
 @keyframes App-logo-float {
@@ -35,5 +36,10 @@
 }
 
 .Coming-soon {
-  color: rgb(236, 202, 47);
+  color: rgb(184, 152, 13);
+}
+
+.temp-home-links {
+  color: rgb(184, 152, 13);
+  padding-top: 70px;
 }
