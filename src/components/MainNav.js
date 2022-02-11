@@ -1,44 +1,135 @@
-import React, { useState } from 'react';
-//import { Link } from "react-router-dom";
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
 import logo from '../logo.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../scss/Main.scss';
 
 
-export function MainNav() {
+
+const pages = [ <a href="/mission" className="main-nav-link-button">OUR MISSION</a>,
+                <a href="/invest" className="main-nav-link-button">INVEST</a>,
+                <a href="/contact" className="main-nav-link-button">CONTACT US</a>
+              ];
+
+const pageMenu = [ <a href="/mission" className="main-nav-link-button">OUR MISSION</a>,
+  <a href="/invest" className="main-nav-link-button">INVEST</a>,
+  <a href="/contact" className="main-nav-link-button">CONTACT US</a>
+];
+
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+
+const MainNav = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
-    <div className="main-nav-bar">
-      <Container>
-        <Navbar collapseOnSelect expand="lg" bg="none" >
-          <Navbar.Brand href="/" className="nav-bar-brand">
-            <img src={logo} className="main-nav-logo" alt="The Garrison RV Park" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav"  className="main-nav-toggle" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-            <Nav.Link href="/mission" className="main-nav-link">Our Mission</Nav.Link>
-              {/*   <NavDropdown title="Learn More"  className="nav-bar-link">
-                  <NavDropdown.Item href="#action/3.1" >Residents</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1">Investors</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Make a Donation</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Contact Us</NavDropdown.Item>
-                </NavDropdown>  */}
-              <Nav.Link href="/invest" className="main-nav-link">Invest</Nav.Link>
-              <Nav.Link href="/contact" className="main-nav-link">Contact Us</Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="/dashboard" className="main-nav-link">Customer Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+    <AppBar position="static" className="main-nav-bar">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div" 
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+          >
+            <a href="/"><img src={logo}  className="main-nav-logo" alt="The Garrison RV Park" /></a>
+            
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+              className="menu-icon-button"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+           
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}    className="main-nav-bar">
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          >
+            <a href="/"><img src={logo}  className="main-nav-logo-small" alt="The Garrison RV Park" /></a>
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Login">
+            <a href="/dashboard" className="main-nav-link-button">LOGIN</a>
+          </Tooltip>
+
+          </Box>
+        </Toolbar>
       </Container>
-    </div>
+    </AppBar>
   );
-}
+};
+export default MainNav;

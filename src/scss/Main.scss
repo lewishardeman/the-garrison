@@ -59,56 +59,51 @@
     @include margin-bottom(3rem);
 }
 
-.main-nav-link {
-    @include font-size(1.2rem);
-    @include margin-left(1rem);
-    color: rgb(184, 152, 13) !important;
-    font-weight: 500;
-    
-    &:hover {
-        text-decoration: underline;
-      }
-
-}
-
-.nav-bar-link {
-    color: rgb(184, 152, 13) !important;
-    }
-  
-.nav-bar-brand {
-color: rgb(184, 152, 13) !important;
-    }
-
-.main-nav-toggle {
-color: rgb(184, 152, 13) !important;
-border-color: #ffc107 !important;
-border-top-color: rgb(255, 193, 7) !important;
-border-right-color: rgb(255, 193, 7) !important;
-border-bottom-color: rgb(255, 193, 7) !important;
-border-left-color: rgb(255, 193, 7) !important;
-    }
 
 .main-nav-bar {
-color: rgb(184, 152, 13) !important;
-text-align: center;
-background-color: black;
+background-color: black !important;
     }
 
 .main-nav-logo {
     height: 55px;
     pointer-events: none;
+    @include margin-right(2.5rem);
+    }
+
+.main-nav-logo-small {
+    height: 35px;
+    pointer-events: none;
     }
 
 .main-nav-link-button {
     @include font-size(1.1rem);
+    @include padding-left(.75rem);
+    @include padding-right(.75rem);
     color: rgb(184, 152, 13) !important;
     font-weight: 500;
+    text-decoration: none;
 
     &:hover {
-        color: black !important;
+        color: rgb(255, 255, 255) !important;
+        text-decoration: underline;
       }
 }
 
+.login-button {
+    color: rgb(255, 255, 255) !important;
+}
+
+.nav-menu {
+    background-color: black !important;
+        }
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    background-color: black !important;
+}
+
+.menu-icon-button {
+    color: rgb(184, 152, 13) !important;
+}
 
 
 
