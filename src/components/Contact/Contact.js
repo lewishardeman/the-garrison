@@ -1,13 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Contact.css';
+import '../../scss/Main.scss';
 
 
 
 function Contact() {
 
     return (
-        <div className="temp-page-name">
+        <div className="page-title">
             CONTACT US
         </div>
     );

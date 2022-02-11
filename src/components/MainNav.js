@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import logo from '../logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './MainNav.css'
+import '../scss/Main.scss';
 
 
 export function MainNav() {
@@ -22,7 +22,7 @@ export function MainNav() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav"  className="main-nav-toggle" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            <Nav.Link href="/mission" className="nav-bar-link">Our Mission</Nav.Link>
+            <Nav.Link href="/mission" className="main-nav-link">Our Mission</Nav.Link>
               {/*   <NavDropdown title="Learn More"  className="nav-bar-link">
                   <NavDropdown.Item href="#action/3.1" >Residents</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.1">Investors</NavDropdown.Item>
@@ -30,11 +30,11 @@ export function MainNav() {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Contact Us</NavDropdown.Item>
                 </NavDropdown>  */}
-              <Nav.Link href="/invest" className="nav-bar-link">Invest</Nav.Link>
-              <Nav.Link href="/contact" className="nav-bar-link">Contact Us</Nav.Link>
+              <Nav.Link href="/invest" className="main-nav-link">Invest</Nav.Link>
+              <Nav.Link href="/contact" className="main-nav-link">Contact Us</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="/dashboard"><Button variant="outline-warning">CUSTOMER LOGIN</Button></Nav.Link>
+              <Nav.Link href="/dashboard" className="main-nav-link">Customer Login</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
