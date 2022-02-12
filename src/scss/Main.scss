@@ -75,7 +75,7 @@ background-color: black !important;
     pointer-events: none;
     }
 
-.main-nav-link-button {
+.main-nav-link {
     @include font-size(1.1rem);
     @include padding-left(.75rem);
     @include padding-right(.75rem);
@@ -89,17 +89,7 @@ background-color: black !important;
       }
 }
 
-.login-button {
-    color: rgb(255, 255, 255) !important;
-}
 
-.nav-menu {
-    background-color: black !important;
-        }
-
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
-    background-color: black !important;
-}
 
 .menu-icon-button {
     color: rgb(184, 152, 13) !important;
